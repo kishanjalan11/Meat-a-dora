@@ -1,0 +1,61 @@
+nav{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 5px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    width: 100%;
+}
+nav>div{
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+}
+nav>div>img{
+    height: 100%;
+}
+nav>div>div:not(#location){
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#location{
+    margin-top: 10px;
+}
+#location>p{
+    font-size: 12px;
+    margin-top: -10px;
+    margin-left: 15px;
+}
+#location>div{
+    display: flex;
+    font-size: 15px;
+    justify-content: left;
+}
+#location>div>img,#location>div>p{
+    margin-right: 5px;
+}
+#input{
+    align-self: center;
+    width: 300px;
+    background-image: url("https://www.licious.in/image/search_venus_icon.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+    border: 1px solid #e7e7e7;    
+    background-color: #f8f8f8;
+    color:rgba(31, 31, 31, 0.6);
+    border-radius: 4px;
+    padding: 6px 12px;
+    height: 20px;
+    cursor: pointer;
+}
+
+nav>div>div>img{
+    height: 15px;
+}
+nav>div>div>p{
+    font-size: 15px;
+    margin-left: 10px;
+}
