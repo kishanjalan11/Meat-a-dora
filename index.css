@@ -1,137 +1,111 @@
-#main{
-    width: 75%;
-    margin: 100px auto;
+body{
+  margin: 0px;
+  /* font-family: 'Lato Regular', sans-serif; */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+}
+p{
+  font-size: 15px;
+}
+h1{
+  font-size: 20px;
+}
+#main{
+  width: 75%;
+  margin:auto;
+}
+#by_category{
+  width: 75%;
+  margin: auto;
 }
 #container1{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-    gap: 20px 60px;
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  gap: 20px 60px;
 }
 #container1>.card{
-    /* border: 2px solid red; */
-    text-align: center;
+  text-align: center;
 }
 #container1>.card>img{
-    width: 100%;
+  width: 100%;
 }
 #by_category>h1{
-    font-size: 20px;
+  font-size: 20px;
 }
 #by_category>p{
-    font-size: 15px;
-    margin-top: -10px;
+  font-size: 15px;
+  margin-top: -10px;
 }
 #deal>img{
-    width: 100%;
-    border-radius: 15px;
+  width: 100%;
+  border-radius: 15px;
 }
-/*------------------------------------------------------------------------------*/
 .carousel {
-    display: block;
+  display: block;
   }
 .carousel-cell{
-    width: 20%; 
-    height: 300px; 
-    margin-right: 20px;
+  width: 20%; 
+  height: 300px; 
+  margin-right: 20px;
 }
 .carousel-cell>img{
-    width: 100%;
-    border-radius: 15px;
+  width: 100%;
+  border-radius: 15px;
   }
 .carousel-cell>h1{
-    font-size: 15px;
+  font-size: 15px;
 }
 .carousel-cell:nth-child(6){
-    background-color: #FAF7F2;
-    color: #D11243;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 15px;
-    font-weight: bold;
+  background-color: #FAF7F2;
+  color: #D11243;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-weight: bold;
 }
-  /* ------------------------------------------------------------------- */
-  
-  /* hide disabled button */
-  .flickity-button:disabled {
-    display: none;
-  }
-
-  /* .flickity-button {
-    background: #333;
-  }
-  .flickity-button:hover {
-    background: #F90;
-  }
-  
-  .flickity-prev-next-button {
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-  }
-
-  .flickity-button-icon {
-    fill: white;
-  }
-  .flickity-prev-next-button.previous {
-    left: -40px;
-  }
-  .flickity-prev-next-button.next {
-    right: -40px;
-  } */
-
-
-  /* -------------------------------------------------- */
-
-  #fresh>div{
-    display: flex;
-    justify-content: flex-start;
-
-  }
-  #fresh>div>img{
-    width: 230px;
-    margin-right: 20px;
-    border-radius: 15px;
-  }
-
-  /* ------------------------ */
+#fresh>div{
+  display: flex;
+  justify-content: flex-start;
+}
+#fresh>div>img{
+  width: 230px;
+  margin-right: 20px;
+  border-radius: 15px;
+}
 .offer-carousel-cell{
-    width: 30%; 
-    margin-right: 20px;
+  width: 30%; 
+  margin-right: 20px;
 }
- .offer-carousel-cell>img{
-    width: 100%;
-    border-radius: 15px;
-  }
-/* -------------------------------------------------------------------------------- */
-
+.offer-carousel-cell>img{
+  width: 100%;
+  border-radius: 15px;
+}
+#footer{
+  margin-top: 30px;
+}
 #desc{
   padding: 50px 0px;
   background-color: #FDF3F6;
 }
-
 #desc>div>div>div{
-    height: 4px;
-    width: 40px;
-    background-color: #d11243;
-    border-radius: 2px;
+  height: 4px;
+  width: 40px;
+  background-color: #d11243;
+  border-radius: 2px;
 }
 #desc>div{
   width: 75%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  /* border: #D11243 solid 2px; */
 }
 #desc>div>div{
   width: 30%;
-  /* border: #D11243 solid 2px; */
 }
 #contact>div{
   width: 75%;
   margin: 20px auto;
-  /* border: #D11243 solid 2px;   */
 }
 #contact #top{
   display: flex;
@@ -140,10 +114,10 @@
   height: 50px;
 }
 #contact #top>div{
-    width: 100%;
-    height: 1px;
-    border-top: 1px solid black;
-    align-self: center;
+  width: 100%;
+  height: 1px;
+  border-top: 1px solid black;
+  align-self: center;
 }
 
 #contact #bottom>#second{
@@ -193,3 +167,146 @@
   border-radius: 24px;
   text-align: center;
 }
+#searches>div{
+  width: 75%;
+  margin: auto;
+  padding: 50px 0px;
+}
+
+#searches .bold{
+  font-weight: bold;
+}
+#copyright{
+  background-color: #464646;
+}
+#copyright>div{
+  padding: 50px 0px;
+  width: 75%;
+  margin: auto;
+  text-align: center;
+  color: white;
+}
+#copyright p{
+  font-size: 12px;
+}
+
+#login-panel>img{
+  width: 400px;
+  height: 100vh;
+  float: right;
+  z-index: -1;
+}
+#login-panel{
+  display: none;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  z-index: 1;
+  transition: all 2s;
+}
+#login-panel>div{
+  /* z-index: 2000; */
+  width: 360px;
+  height: 300px;
+  float: right;
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+  background-color: white;
+  padding: 5px 10px;
+}
+#login-panel input{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  height: 30px;
+  border: 0;
+  border-bottom: 1px solid #cbcbcb;
+  line-height: 2.6;
+  font-size: 17px;
+}
+#login-panel button{
+  width: 90%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-top: 20px;   
+  height: 30px;
+  background-color: #d11243;
+  border: 0px;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+}
+#login-panel p{
+  text-align: center;
+}
+#login-panel h1{
+  font-size: 20px;
+  margin-left:15px ;
+}
+#otp{
+  margin-top: 20px;
+}
+
+#searchCont{
+  width: 70%;
+  margin: auto;
+  display: block;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px 30px;
+  /* border: 2px solid red; */
+}
+#searchCont>div{
+  display: flex;
+  /* border: 2px solid green; */
+  padding: 10px 0px;
+  border-bottom: #d8d8d8 1px solid;
+}
+#searchCont img{
+  width: 70px;
+  height: 70px;
+}
+
+
+.carousel-cell p{
+  font-size: 12px;
+  margin-bottom: -15px;
+  margin-top: 40px;
+}
+/* .carousel-cell h1{
+  margin-bottom: 50px;
+} */
+/* hide disabled button */
+.flickity-button:disabled {
+  display: none;
+}
+/* 
+.flickity-button {
+  background: #333;
+}
+.flickity-button:hover {
+  background: #F90;
+}
+
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.flickity-button-icon {
+  fill: white;
+}
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+} */

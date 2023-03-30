@@ -2,9 +2,10 @@ nav{
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     padding: 5px;
     background-color: white;
-    position: fixed;
+    position: sticky;
     top: 0px;
     width: 100%;
+    z-index: 1;
 }
 nav>div{
     width: 75%;
@@ -13,7 +14,7 @@ nav>div{
     justify-content: space-between;
     height: 70px;
 }
-nav>div>img{
+nav>div>a>img{
     height: 100%;
 }
 nav>div>div:not(#location){
@@ -58,4 +59,11 @@ nav>div>div>img{
 nav>div>div>p{
     font-size: 15px;
     margin-left: 10px;
+}
+nav>div:hover{
+    cursor: pointer;
+}
+#login-panel{
+    transition: 2s;
+    /* opacity: 0.5; */
 }
