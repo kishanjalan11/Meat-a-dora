@@ -1,8 +1,7 @@
 body{
   margin: 0px;
-  /* font-family: 'Lato Regular', sans-serif; */
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  overflow-x: hidden;
 }
 p{
   font-size: 15px;
@@ -189,6 +188,104 @@ h1{
 #copyright p{
   font-size: 12px;
 }
+#footer{
+  margin-bottom: -20px;
+}
+
+#searchCont>h1,#searchCont>p{
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+#searchCont>h1{
+  font-size: 25px;
+}
+#searchCont>p{
+  margin-top: -25px;
+}
+#searchCont{
+  width: 70%;
+  margin: 20px auto;
+  grid-template-columns: repeat(2,1fr);
+  gap: 10px 30px;
+}
+#searchCont>div{
+  display: flex;
+  padding: 10px 0px;
+  border-bottom: #d8d8d8 1px solid;
+}
+#searchCont>div>div:nth-child(1){
+  width: 80px;
+  height: 75px;
+  margin-right: 10px;
+}
+#searchCont img{
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+#searchCont>div>div>p{
+  margin-top: 0px;
+}
+#searchCont>div>div{
+  width: 100%;
+}
+#searchCont>div>div>div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#searchCont>div>div>div>button{
+  background-color: #fff;
+  font-size: 8px;
+  font-weight: bold;
+  color: #D11243;
+  border: 1px solid #D11243;
+  border-radius: 5px;
+  height: 30px;
+  cursor: pointer;
+}
+/* --------------------------------------------------------------------------- */
+
+.carousel-cell p{
+  font-size: 12px;
+  margin-bottom: -15px;
+  margin-top: 40px;
+}
+/* .carousel-cell h1{
+  margin-bottom: 50px;
+} */
+/* hide disabled button */
+.flickity-button:disabled {
+  display: none;
+}
+/* 
+.flickity-button {
+  background: #333;
+}
+.flickity-button:hover {
+  background: #F90;
+}
+
+.flickity-prev-next-button {
+  width: 30px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.flickity-button-icon {
+  fill: white;
+}
+.flickity-prev-next-button.previous {
+  left: -40px;
+}
+.flickity-prev-next-button.next {
+  right: -40px;
+} */
+
+/* --------------------------------------------------------------------------------------------------------------------- */
+
+
+/* Login Panel */
 
 #login-panel>img{
   width: 400px;
@@ -198,14 +295,14 @@ h1{
 }
 #login-panel{
   display: none;
-  position: absolute;
+  position: fixed;
+  width: 0px;
   right: 10px;
   top: 0px;
-  z-index: 1;
-  transition: all 2s;
+  z-index: 3;
 }
 #login-panel>div{
-  /* z-index: 2000; */
+  z-index: 2000;
   width: 360px;
   height: 300px;
   float: right;
@@ -255,58 +352,33 @@ h1{
   margin-top: 20px;
 }
 
-#searchCont{
-  width: 70%;
-  margin: auto;
+#login-panel .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  margin-right: 400px;
+  text-decoration: none;
+  color: #D11243;
   display: block;
-  grid-template-columns: repeat(2,1fr);
-  gap: 10px 30px;
-  /* border: 2px solid red; */
-}
-#searchCont>div{
+  border: #D11243 2px solid;
+  border-radius: 50%;
+  /* background-color: rgba(0,0,0, 0.7); */
+} 
+
+#login-panel .closebtn>p{
+  margin: 0%;
+  margin-top: -5px;
+  margin-right: 5px;
+  margin-left: 5px;
   display: flex;
-  /* border: 2px solid green; */
-  padding: 10px 0px;
-  border-bottom: #d8d8d8 1px solid;
-}
-#searchCont img{
-  width: 70px;
-  height: 70px;
-}
+  text-align: center;
+  justify-content: center;
+  font-size: 30px;
+} 
 
-
-.carousel-cell p{
-  font-size: 12px;
-  margin-bottom: -15px;
-  margin-top: 40px;
-}
-/* .carousel-cell h1{
-  margin-bottom: 50px;
+/* body>div:not(#login-panel){
+  filter: blur(8px);
 } */
-/* hide disabled button */
-.flickity-button:disabled {
-  display: none;
-}
-/* 
-.flickity-button {
-  background: #333;
-}
-.flickity-button:hover {
-  background: #F90;
-}
-
-.flickity-prev-next-button {
-  width: 30px;
-  height: 30px;
-  border-radius: 5px;
-}
-
-.flickity-button-icon {
-  fill: white;
-}
-.flickity-prev-next-button.previous {
-  left: -40px;
-}
-.flickity-prev-next-button.next {
-  right: -40px;
+/* nav{
+  filter: blur(8px);
 } */
