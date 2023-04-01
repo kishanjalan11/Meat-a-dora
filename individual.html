@@ -5,10 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
+    <link rel="stylesheet" href="./individual.css">
     <link rel="stylesheet" href="./nav.css">
-    <link rel="stylesheet" href="./special.css">
     <link rel="stylesheet" href="./footer.css">
-    <link rel="stylesheet" href="./cart.css">
 </head>
 <body>
     <nav>
@@ -29,7 +28,7 @@
             <div class="dropdown-content">
                 <div id="left">
                 </div>
-                <div id="right">
+                <div id="right">   
                 </div>
             </div>
         </div>
@@ -44,38 +43,52 @@
         </div>
     </nav>
     <div id="container">
-        <h1></h1>
+        <div id="top">
+            <div>
+                <img src="" alt="">
+            </div>  
+            <div>
+                <h1></h1>
+                <p></p>
+                <hr>
+                <p>
+                    If you like the more meaty, juicy parts of chicken without the bones, the Licious Chicken Thigh (Boneless) cut is for you!
+                    <br><br>
+                    Cut from the from the upper-leg, above the knee joint, these meaty cuts are sliced further into boneless pieces for convenient cooking. Thigh cuts are perfect for slow-cooking such as in a curry, grilling, steaming, smoking or baking.
+                    <br><br>
+                    This cut is a perfect addition to Chicken Tacos, Creamy Chicken Stew, One-Pot Chicken Rice etc.
+                    <br><br>
+                    Licious chickens are raised on bio-secure farms and are antibiotic-residue free.
+                    Our chicken is stored in temperature-controlled conditions, between 0-4?, to ensure that it is chilled, never frozen. Order Licious Chicken Boneless - Cubes online and get it home delivered.
+                </p>
+                <div id="contents">
+                    <div>
+                        <div>
+                            <img src="https://d2407na1z3fc0t.cloudfront.net/Banner/pices_pdp.png" alt="">
+                            <p>No.of Pieces: 4-5</p>
+                        </div>
+                        <div>
+                            <img src="https://d2407na1z3fc0t.cloudfront.net/Banner/serves_pdp.png" alt="">
+                            <p>Serves 4</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div>
+                        <div id="weight">
+                            <img src="https://d2407na1z3fc0t.cloudfront.net/Banner/weight_pdp.png" alt="">
+                            <p></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="price">
+                    <h1></h1>
+                    <button>ADD TO CART</button>
+                </div>
+            </div>
+        </div>
+        <img src="./Images/liciousway.jpg" alt="">
     </div>
     <div id="footer">
-        <div id="cart-panel">
-            <h1>Order Summary</h1>
-            <div id="green"></div>
-            <div id="details"></div>
-            <p>Stop paying delivery charges. Join Meatopia today!</p>
-            <div id="metopia">
-                <img src="https://www.licious.in/image/rebranding/svg/licious-meatopia-logo.svg" alt="">
-                <h4>JOIN NOW ></h4>
-            </div>
-            <div id="bill">
-                <h4>Bill Details</h4>
-                <div id="subTotal">
-                    <p>Subtotal</p>
-                    <p id="sub"></p>
-                </div>
-                <div id="delivery">
-                    <p>Delivery Charge</p>
-                    <p id="charge"></p>
-                </div>
-                <hr>
-                <div id="total">
-                    <h4>Total</h4>
-                    <p id="amount"></p>
-                </div>
-            </div>
-            <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">
-                <p>&times;</p>
-            </a>
-        </div>
         <div id="desc">
             <div>
                 <div>
@@ -200,47 +213,23 @@
             </div>    
         </div>
     </div>
-    
 </body>
 <script src="./nav.js"></script>
-<script src="./cart.js"></script>
 <script>
-    let container=document.getElementById("container")
-    let specialN=localStorage.getItem("specialName");
-    let headName=["iftar","bestsellers","combos","lower","breakfast","boneless","toprated"];
-    let catName=["Iftar specials","Bestsellers","Combos for you","Rs 199 or lower!","Your go-to breakfast meat","Delicious boneless cuts","Top Rated"];
-    let heading="";
-    for(let i=0;i<=headName.length-1;i++){
-        if(specialN==headName[i]){
-            heading=catName[i]
-        }
-    }
-    document.title=heading
-    let products=localStorage.getItem("products");
-    products=JSON.parse(products);
-    let head=document.querySelector("#container>h1");
-    head.innerText=heading;
-    let filtered=products.filter(function(element){
-        if(element.special==specialN){
-            return true;
+    let itemName=localStorage.getItem("itemName");
+    document.title=itemName
+    let Products=localStorage.getItem("products");
+    Products=JSON.parse(Products);
+    let filtered=Products.filter(function(element){
+        if(element.name==itemName){
+            return true
         }
     })
-    filtered.forEach(function(element){
-        let box=document.createElement("div");
-        container.append(box);
-        let image=document.createElement("img");
-        image.setAttribute("src",element.img);
-        let name=document.createElement("h1")
-        name.innerText=element.name
-        let quantity=document.createElement("p");
-        quantity.innerText=element.quantity;
-        let priceDiv=document.createElement("div");
-        let price=document.createElement("h4");
-        price.innerText="₹"+element.price;
-        let button=document.createElement("button");
-        button.innerText="ADD";
-        priceDiv.append(price,button)
-        box.append(image,name,quantity,priceDiv)
-    });
+    filtered=filtered[0]
+    document.querySelector("#top>div>img").setAttribute("src",filtered.img);
+    document.querySelector("#top>div>h1").innerText=filtered.name;
+    document.querySelector("#top>div>p").innerText=filtered.category+" | "+filtered.subCategory;
+    document.querySelector("#weight>p").innerText="Net wt: "+filtered.quantity;
+    document.querySelector("#price>h1").innerText="₹"+filtered.price+".00";
 </script>
 </html>
