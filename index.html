@@ -7,6 +7,9 @@
     <title>Order Meat Online - Buy Fresh &amp; High Quality Meat at Best Price on Meta-a-dora</title>
     <link rel="stylesheet" href="/nav.css">
     <link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="./cart.css">
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
 </head>
 <body>
@@ -36,7 +39,7 @@
                 <img src="https://www.licious.in/image/rebranding/svg/profile-grey.svg" alt="">
                 <p>Login</p>
             </div>
-            <div>
+            <div id="cart" onclick="openCart()">
                 <img src="https://www.licious.in/image/rebranding/svg/cart.svg" alt="">
                 <p>Cart</p>
             </div>
@@ -317,10 +320,40 @@
                 </div>    
             </div>
         </div>
+        <div id="cart-panel">
+            <h1>Order Summary</h1>
+            <div id="green"></div>
+            <div id="details"></div>
+            <p>Stop paying delivery charges. Join Meatopia today!</p>
+            <div id="metopia">
+                <img src="https://www.licious.in/image/rebranding/svg/licious-meatopia-logo.svg" alt="">
+                <h4>JOIN NOW ></h4>
+            </div>
+            <div id="bill">
+                <h4>Bill Details</h4>
+                <div id="subTotal">
+                    <p>Subtotal</p>
+                    <p id="sub"></p>
+                </div>
+                <div id="delivery">
+                    <p>Delivery Charge</p>
+                    <p id="charge"></p>
+                </div>
+                <hr>
+                <div id="total">
+                    <h4>Total</h4>
+                    <p id="amount"></p>
+                </div>
+            </div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeCart()">
+                <p>&times;</p>
+            </a>
+        </div>
 </body>
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 <script src="./products.js"></script>
 <script src="./index.js"></script>
 <script src="./login.js"></script>
 <script src="./nav.js"></script>
+<script src="./cart.js"></script>
 </html>

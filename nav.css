@@ -35,6 +35,9 @@ nav>div>div:not(#location){
     font-size: 15px;
     justify-content: left;
 }
+#location>div>img{
+  width: 10px ;
+}
 #location>div>img, #location>div>p{
     margin-right: 5px;
 }
@@ -133,4 +136,14 @@ nav>div:hover{
   #left>div:hover{
     background-color: #f1f1f1;
     font-weight: bold;
+  }
+  #right>div:hover{
+    background-color:white;
+    font-weight: bold;  
+  }
+
+  #cart{
+    margin: 10px 0px;
+    padding: 15px;
+    border-radius: 10px;
   }

@@ -33,10 +33,16 @@ otpShow=()=>{
 
 function openNav() {
     document.getElementById("login-panel").style.display = "block";
-    // document.querySelector("body div:not(#login-panel)").style.filter="blur(8px)"    
+    document.querySelector("nav").style.filter="blur(8px)";
+    document.getElementById("by_category").style.filter="blur(8px)";
+    document.getElementById("main").style.filter="blur(8px)";    
+    document.getElementById("footer").style.filter="blur(8px)";
   }
 
   function closeNav() {
     document.getElementById("login-panel").style.display="none"
-    // document.querySelector("body div:not(#login-panel)").style.filter="none"
+    document.querySelector("nav").style.filter="none";
+    document.getElementById("by_category").style.filter="none";
+    document.getElementById("main").style.filter="none";    
+    document.getElementById("footer").style.filter="none";
 }

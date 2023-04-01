@@ -1,5 +1,14 @@
 let totalProducts=localStorage.getItem("products");
 totalProducts=JSON.parse(totalProducts);
+
+let cart=localStorage.getItem("cart");
+if(cart==null){
+    cart=[];
+}
+else{
+    cart=JSON.parse(cart)
+}
+// DisplayCart();
 let specialN="";
 let headName=["iftar","bestsellers","combos","lower","breakfast","boneless","toprated"];
 let Display=()=>{
@@ -19,20 +28,54 @@ let Display=()=>{
             let image=document.createElement("img");
             let name=document.createElement("h1");
             let quantity=document.createElement("p");
+
+            let priceDiv=document.createElement("div");
             let price=document.createElement("h4");
+            let button=document.createElement("button");
+            
+            priceDiv.setAttribute("id","priceDiv");
             image.setAttribute("src",element.img);
             name.innerText=element.name;
             quantity.innerText=element.quantity;
             price.innerText="₹"+element.price;
-            cell.append(image,name,quantity,price)
+            button.innerText="+";
+            priceDiv.append(price,button)
+            cell.append(image,name,quantity,priceDiv)
+            
+            button.addEventListener("click",function(){
+                let flag=true;
+                cart.forEach(function(element2){
+                    if(element.id==element2.id){
+                        flag=false
+                    }
+                });
+                if(flag==true){
+                    cart.push({...element,cartQuantity:1});
+                    localStorage.setItem("cart",JSON.stringify(cart))
+                    button.innerText="ADDED";
+                    button.style.fontWeight="normal"
+                    button.disabled=true;
+                    location.reload();
+                    let cartDiv=document.getElementById("cart");
+                    let quantityText=document.querySelector("#cart>p")
+                    quantityText.innerText=cart.length+" items"
+                    cartDiv.style.border="2px solid #d11243";
+                    cartDiv.style.color="#d11243"
+                }
+            })
+            image.addEventListener("click",function(){
+                let itemName=element.name;
+                localStorage.setItem("itemName",itemName);
+                window.location.href="./individual.html";
+            })
         })
             let cell=document.createElement("div");
             cell.innerText="View All"
             cell.setAttribute("class","carousel-cell");
             cell.addEventListener("click",function(){
-                window.location.href="./special.html"
                 let specialName=headName[i];
                 localStorage.setItem("specialName",specialName);
+                window.location.href="./special.html"
             })
             container.append(cell);
     }

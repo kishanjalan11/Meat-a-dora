@@ -71,21 +71,35 @@ function displayDropdown(){
             name.innerText=element.name;
             box.append(image,name);
 
-        box.addEventListener("mouseenter",function(){
-        let cont=document.getElementById("right");
-        element.sub.forEach(function(el){
-            let box=document.createElement("div");
-            cont.append(box);
-            let subs=document.createElement("p")
-            subs.innerText=el;
-            box.append(subs)
-        })
-    });
-    box.addEventListener("mouseleave",function(){
-        let cont=document.getElementById("right");
-        // cont.style.position="fixed"
-        cont.innerHTML=""
-    })
+            box.addEventListener("mouseenter",function(){
+                let cont=document.getElementById("right");
+                cont.innerHTML="";
+                element.sub.forEach(function(el){
+                    let box=document.createElement("div");
+                    cont.append(box);
+                    let subs=document.createElement("p")
+                    subs.innerText=el;
+                    box.append(subs)
+                })
+            });
+
     })
 }
+function DisplayCartStart(){
+    let cart=localStorage.getItem("cart");
+    if(cart==null){
+        cart=[]
+    }
+    else{
+        cart=JSON.parse(cart);
+    }
+    if(cart.length!=0){
+        let cartDiv=document.getElementById("cart");
+        let quantityText=document.querySelector("#cart>p")
+        quantityText.innerText=cart.length+" items"
+        cartDiv.style.border="2px solid #d11243";
+        cartDiv.style.color="#d11243"
+    }
+}
 displayDropdown();
+DisplayCartStart();
