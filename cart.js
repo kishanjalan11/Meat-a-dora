@@ -70,6 +70,7 @@ function DisplayCart(){
             })
             localStorage.setItem("cart",JSON.stringify(cart))
             DisplayCart();
+            location.reload();
         })
         increment.addEventListener("click",function(){
             element.cartQuantity++;
@@ -111,5 +112,9 @@ function DisplayCart(){
     totalAmount=subTotal+deliveryCh;
     let amount=document.getElementById("amount");
     amount.innerText="₹"+totalAmount;
+    document.getElementById("totAmt").innerText="Total : ₹"+totalAmount;
+    document.getElementById("checkout").addEventListener("click",function(){
+        window.location.href="./checkout.html";
+    })
     }   
     DisplayCart();

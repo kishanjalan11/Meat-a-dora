@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat-a-dora | Checkout</title>
+    <link rel="stylesheet" href="./checkout.css">
+</head>
+<body>
+    <div id="container1">
+            <h1>Add Address</h1>
+            <input type="text" placeholder="Flat No/Building Name/Street Name">
+            <input type="text" placeholder="Area/Locality">
+            <input type="text" placeholder="Landmark">
+            <input type="text" placeholder="City">
+            <input type="text" placeholder="Mobile Number">
+            <input type="text" placeholder="Enter Email">
+            <input type="text" placeholder="Full Name">
+            <Button id="proceedDelivery">Save & Proceed</Button>
+    </div>
+    <div id="container2">
+        <h1>Delivery Summary</h1>
+        <div id="grid">
+
+        </div>
+        <Button id="proceed">Proceed To Payment</Button>
+    </div>
+    <div id="container3">
+        <h1>Payment Methods</h1>
+        <div id="methods">
+            <label>Choose a Payment Method:</label>
+            <select>
+                <option value="Cash On Delivery">Cash On Delivery</option>
+                <option value="Pay Using UPI">Pay Using UPI</option>
+                <option value="Pay Later">Pay Later</option>
+            </select>
+        </div>
+        <Button id="pay">PAy</Button>
+    </div>
+    <div id="container4">
+        <h1>Thank You For Ordering</h1>
+        <p id="timer"></p>
+    </div>
+</body>
+<script src="./checkout.js"></script>
+</html>
